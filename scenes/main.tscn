@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5drnwv0iefcu"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_gtopl"]
+[ext_resource type="Texture2D" uid="uid://byr2dyor6ypkj" path="res://art/Screenshot 2024-05-09 at 17.54.16.png" id="2_wrh6y"]
+[ext_resource type="Shader" path="res://shaders/main.gdshader" id="3_h042c"]
+[ext_resource type="FontFile" uid="uid://cx6ell7bb0uxd" path="res://art/Jaini_Purva/JainiPurva-Regular.ttf" id="3_m3sdu"]
+[ext_resource type="AudioStream" uid="uid://be3fghs7feq11" path="res://art/beat.ogg" id="4_binb2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfkvr"]
+shader = ExtResource("3_h042c")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = 0.004
+shader_parameter/frequency = 40.0
+shader_parameter/speed = 1.0
+shader_parameter/amplitude_vertical = 0.0
+shader_parameter/frequency_vertical = 0.0
+shader_parameter/speed_vertical = 10.0
+shader_parameter/scroll_direction = Vector2(2.08165e-12, 0.005)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.1
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gtopl")
+
+[node name="Sampler" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10
+
+[node name="Beat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_binb2")
+volume_db = 6.0
+autoplay = true
+
+[node name="BG" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yfkvr")
+position = Vector2(1314, 795)
+scale = Vector2(0.761095, 0.761095)
+texture = ExtResource("2_wrh6y")
+
+[node name="Lyrics" type="RichTextLabel" parent="."]
+offset_left = 62.0
+offset_top = 401.0
+offset_right = 1342.0
+offset_bottom = 926.0
+theme_override_colors/default_color = Color(0.698039, 0.941176, 0.721569, 1)
+theme_override_colors/font_shadow_color = Color(0.152941, 0.152941, 0.152941, 0.501961)
+theme_override_colors/font_outline_color = Color(0.47451, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_m3sdu")
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]Dracula Flow Soundboard
+
+all audio from PLUMMCORP RECORDS on YouTube[/center]"
+fit_content = true
