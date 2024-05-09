@@ -12,10 +12,10 @@ shader_parameter/screen_height = 640.0
 shader_parameter/amplitude = 0.004
 shader_parameter/frequency = 40.0
 shader_parameter/speed = 1.0
-shader_parameter/amplitude_vertical = 0.0
-shader_parameter/frequency_vertical = 0.0
+shader_parameter/amplitude_vertical = 0.001
+shader_parameter/frequency_vertical = 1000.0
 shader_parameter/speed_vertical = 10.0
-shader_parameter/scroll_direction = Vector2(2.08165e-12, 0.005)
+shader_parameter/scroll_direction = Vector2(0, 0)
 shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = false
 shader_parameter/palette_speed = 0.1
@@ -28,7 +28,7 @@ max_polyphony = 10
 
 [node name="Beat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_binb2")
-volume_db = 6.0
+volume_db = 3.0
 autoplay = true
 
 [node name="BG" type="Sprite2D" parent="."]
