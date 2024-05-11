@@ -41,7 +41,7 @@ texture = ExtResource("2_wrh6y")
 offset_left = 62.0
 offset_top = 401.0
 offset_right = 1342.0
-offset_bottom = 926.0
+offset_bottom = 973.0
 theme_override_colors/default_color = Color(0.698039, 0.941176, 0.721569, 1)
 theme_override_colors/font_shadow_color = Color(0.152941, 0.152941, 0.152941, 0.501961)
 theme_override_colors/font_outline_color = Color(0.47451, 0, 0, 1)
@@ -56,3 +56,13 @@ text = "[center]Dracula Flow Soundboard
 
 all audio from PLUMMCORP RECORDS on YouTube[/center]"
 fit_content = true
+
+[node name="MusicSwitch" type="Button" parent="."]
+offset_left = 1496.0
+offset_top = 11.0
+offset_right = 1892.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 56
+text = "Music On/Off"
+
+[connection signal="pressed" from="MusicSwitch" to="." method="_on_music_switch_pressed"]
